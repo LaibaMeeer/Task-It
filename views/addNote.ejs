@@ -1,0 +1,23 @@
+<%- include("header.ejs") %>
+<div class="noteContainer">
+  <div class="centered-form-wrapper">
+    <form action="/addNote" method="post" class="centered-form">
+      <h1 ">Sticky Note</h1>
+  
+      <div class="form-floating">
+        <input  name="title" class="form-control"  placeholder="Title" required>
+        <label for="floatingInput">Title</label>
+      </div>
+      <div class="form-floating">
+        <textarea name="note" class="form-control"  id="note"  placeholder="Note... "required style="height: 300px;"></textarea>
+        <label for="note">Note...</label>
+      </div>
+  
+      <div class="form-floating">
+        <button class="btn btn-primary w-100 py-2" type="submit" style="background-color: #F05454; border: #6C5B7B; color: white;">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>
