@@ -1,0 +1,339 @@
+
+body {
+  background-color: #F7F7F7;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+  font-family: 'Open Sans', sans-serif;
+  color: #393E46;
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #222831;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 #888888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+  font-weight: 700;
+}
+.d-inline-flex{
+  color: white !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+.offcanvas {
+  background-color: white;
+  color: #393E46;
+}
+
+.offcanvas-header {
+  background-color: #222831;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 0 10px 0 #888888;
+}
+
+.offcanvas-body ul {
+  padding: 18px;
+}
+
+.offcanvas-body ul li {
+  margin-bottom: 18px;
+}
+
+.offcanvas-body ul li a {
+  color: #393E46;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.offcanvas-body ul li a:hover {
+  font-weight: 700;
+  background-color: #E8E8E8;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.list-group {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #888888;
+}
+
+.date-display {
+  font-family: 'Arial', sans-serif;
+  color: #393E46;
+  text-align: left;
+}
+
+.date-display h2 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #222831;
+}
+
+.list-group-item {
+  background-color: #e7e7e7;
+  border: none;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #E8E8E8;
+}
+
+.list-group-item input[type="checkbox"] {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #1ABC9C;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.list-group-item input[type="checkbox"]:checked {
+  background-color: #1ABC9C;
+  border-color: #1ABC9C;
+}
+
+.list-group-item input[type="checkbox"]:checked::after {
+  content: '\2713';
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.d-grid .btn {
+  background-color: #F05454;
+  color: #393E46;
+  font-weight: 600;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.d-grid .btn:hover {
+  background-color: #30475E;
+}
+
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 0 15px #888888;
+}
+
+.modal-header {
+  background-color: #EA5455;
+  color: #393E46;
+}
+
+.modal-footer .btn {
+  background-color: #F05454;
+  color: #393E46;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+  background-color: #E8E8E8;
+}
+
+ /* create  list page */
+  .craeteContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 95vh;
+  }
+  .box {
+    width: 400px;
+    margin: 50px auto;
+    background: #222831;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 15px -5px #888888(0, 0, 0, 0.3);
+  }
+  .boxx{
+    width: 400px;
+    margin:5px auto;
+    background: white;
+    color: #393E46;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 15px -5px #888888(0, 0, 0, 0.3);
+  }
+ 
+ 
+  
+  .item:last-child {
+    border-bottom: 0;
+  }
+  
+  input[type="checkbox"] {
+    margin: 20px;
+    margin-left: 0;
+  }
+  .item {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This will push content to opposite ends */
+    border-bottom: 1px solid #f1f1f1;
+    padding: 0 10px; 
+}
+
+form.edit {
+    display: inline-flex; 
+}
+
+button.edit {
+    border: none;
+    background: none;
+    cursor: pointer; /* Add cursor pointer for better UX */
+    margin-left: auto; /* Ensure the button is aligned to the right within its container */
+}
+
+.icon {
+    height: 20px;
+}
+
+  p {
+    margin-left: 15px;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #222831;
+  }
+  
+  form {
+    text-align: center;
+    margin-left: 20px;
+  }
+  input[type="text"] {
+    text-align: left;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 80%;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #888888;
+  }
+  
+ 
+  button.add {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+    font-size: 30px;
+    border-width: 0;
+  }
+  
+  
+  ::placeholder {
+    color: lightgray;
+    opacity: 1;
+  }
+  
+  footer {
+    flex: 0 0 auto;
+    color: white;
+    text-align: center;
+  }
+  /* note */
+  .noteContainer {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+  }
+  
+  .centered-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 500px; /* Adjust width as needed */
+    padding: 20px; /* Add padding if needed */
+    background-color: white;
+    border: 1px solid #ddd; /* Optional: add a border color */
+    border-radius: 5px;
+  }
+  
+  
+  .centered-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-floating{
+margin-bottom: 5%;  }
+ 
+  /* notelist */
+ 
+
+ .note-container {
+  position: relative; 
+  width: 250px; 
+  min-height: 200px; 
+  max-height: auto;
+  margin: 10px;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  padding-top: 30px; 
+}
+
+.bi-bookmark-fill {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  z-index: 10; 
+}
+.dropdown{
+  
+  position: absolute;
+  top: 3px;
+  right: 0;
+  z-index: 10; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  

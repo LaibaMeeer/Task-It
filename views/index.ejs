@@ -1,0 +1,72 @@
+<%- include("header.ejs") %>
+<div class="listContainer">
+  <div class="list-group">
+    <div class="date-display text-left">
+      <h2>Today</h2>
+    </div>
+    
+    <% if(locals.list.length > 0) { %>
+      <% list.forEach(listItem => { %>
+        <label class="list-group-item d-flex gap-2" style="align-items: center;">
+          <input class="form-check-input flex-shrink-0 task-checkbox" type="checkbox" value="<%= listItem.item %>">
+          <h5>
+            <%= listItem.item %>
+          </h5>
+        </label>
+      <% }) %>
+    <% } %>
+    
+    <div class="d-grid gap-2 col-12 mx-auto" style="margin-top:30px;">
+      <button id="complete-btn" class="btn" type="button" style="background-color: #F05454; color: #393E46;">Complete All Task</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="messageModal" tabindex="-1" style="display:none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Message</h5>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- message -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="close-modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>
+
+<script>
+  document.getElementById('complete-btn').addEventListener('click', function() {
+    const checkboxes = document.querySelectorAll('.task-checkbox');
+    let allChecked = true;
+    
+    checkboxes.forEach((checkbox) => {
+      if (!checkbox.checked) {
+        allChecked = false;
+      }
+    });
+    
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    
+    if (allChecked) {
+      modalTitle.textContent = '🎉 Success!';
+      modalBody.innerHTML = '<p>Excellent! You did it! 😊</p>';
+    } else {
+      modalTitle.textContent = 'Incomplete Tasks';
+      modalBody.innerHTML = '<p>Please complete all tasks before proceeding.</p>';
+    }
+    
+    document.getElementById('messageModal').style.display = 'block';
+  });
+
+  document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('messageModal').style.display = 'none';
+  });
+</script>

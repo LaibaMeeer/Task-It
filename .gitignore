@@ -1,0 +1,15 @@
+# Ignore all `.env` files (commonly used for environment variables)
+*.env
+
+# Ignore all log files
+*.log
+
+# Ignore node_modules directory
+node_modules/
+package-lock.json
+package.json
+
+
+
+
+db-backup.postgres

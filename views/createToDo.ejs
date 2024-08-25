@@ -1,0 +1,59 @@
+<%- include("header.ejs") %>
+    <div class="box">
+        <h1>Today</h1>
+    </div>
+    <div class="boxx">
+      <% if(locals.list.length > 0) { %>
+        <% list.forEach(listItem => { %>
+          <div class="item">
+            <p id="text-<%= listItem.id %>"><%= listItem.item %></p>
+        
+            <!-- Hidden input field for editing -->
+            <form class="edit" action="/edit" method="post">
+                <input type="hidden" name="id" value="<%= listItem.id %>">
+                <input type="text"  id="input-<%= listItem.id %>" name="updatedItem" value="<%= listItem.item %>" hidden>
+                <button class="edit" id="submit-<%= listItem.id %>" type="submit" hidden>
+                    <img class="icon" src="/images/check-solid.svg" alt="tick image">
+                </button>
+
+            </form>
+        
+            <!-- Pencil icon for edit -->
+            <button class="edit" onclick="handler(<%= listItem.id %>)">
+                <img class="icon" src="/images/pencil-solid.svg" alt="pencil image">
+            </button>
+
+             <!-- Trash icon for delete -->
+        <form class="delete" action="/delete" method="post">
+          <input type="hidden" name="id"  value="<%= listItem.id %>">
+          <button class="edit" type="submit" id="<%= listItem.id %>">
+              <img class="icon" src="/images/trash.svg" alt="trash image">
+          </button>
+      </form>
+        </div>
+        
+        
+        <% }) %>
+    <% } %>
+    
+
+            <form class="item" action="/add" method="post">
+              <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus="true" required />
+              
+              <button class="add" type="submit" name="list"  >
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#F05454" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg></button>
+            </form>
+      </div>
+    
+      <script>
+        // JavaScript function for handling edit
+        function handler(id) {
+            document.querySelector(`#text-${id}`).setAttribute("hidden", true);
+            document.querySelector(`#input-${id}`).removeAttribute("hidden");
+            document.querySelector(`#submit-${id}`).removeAttribute("hidden");
+        }
+      </script>
+    
+<%- include("footer.ejs") %>
